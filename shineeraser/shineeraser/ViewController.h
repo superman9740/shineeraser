@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIScrollViewDelegate>
 {
 
     CGPoint firstEyeLocation;
@@ -21,13 +21,14 @@
 @property (assign) BOOL didSelectImage;
 
 @property (nonatomic, strong) IBOutlet UIImageView* imageView;
+@property (nonatomic, strong) IBOutlet UIScrollView* scrollView;
 
 
 -(IBAction)selectPhotos:(id)sender;
 
 
 -(IBAction)handleTap:(id)sender;
-
+-(IBAction)handlePinchToZoom:(id)sender;
 
 -(IBAction)removeShine:(id)sender;
 

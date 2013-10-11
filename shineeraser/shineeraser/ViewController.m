@@ -29,17 +29,59 @@
     
     [_imageView addGestureRecognizer:singleFingerTap];
     
-    //The event handling method
+  //  UITapGestureRecognizer *twoFingerTap =    [[UITapGestureRecognizer alloc] initWithTarget:self
+  //                                                                                       action:@selector(handlePinchToZoom:)];
+  //  twoFingerTap.numberOfTapsRequired = 2;
     
+   // [_imageView addGestureRecognizer:twoFingerTap];
+    
+    
+   
+       //note set the imageView's frame in ViewwillAppear or ViewDidAppear.
+    //_imageView.frame = CGRectMake(0,0, 320, 480);
+
 
     
 }
-- (UIBezierPath *)makeCircleAtLocation:(CGPoint)location radius:(CGFloat)radius
+- (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.imageView;
+}
+
+
+- (void)scrollViewDidZoom:(UIScrollView *)sv
+{
+    UIView* zoomView = [sv.delegate viewForZoomingInScrollView:sv];
+    CGRect zvf = zoomView.frame;
+    if(zvf.size.width < sv.bounds.size.width)
+    {
+        zvf.origin.x = (sv.bounds.size.width - zvf.size.width) / 2.0;
+    }
+    else
+    {
+        zvf.origin.x = 0.0;
+    }
+    if(zvf.size.height < sv.bounds.size.height)
+    {
+        zvf.origin.y = (sv.bounds.size.height - zvf.size.height) / 2.0;
+    }
+    else
+    {
+        zvf.origin.y = 0.0;
+    }
+    zoomView.frame = zvf;
+}
+
+-(IBAction)handlePinchToZoom:(id)sender
 {
     
- 
-    location.y -= 25;
-    location.x -= 15;
+//    [scrollView zoomToRect:zoomRect animated:YES];
+
+    
+}
+
+- (UIBezierPath *)makeCircleAtLocation:(CGPoint)location radius:(CGFloat)radius
+{
     
     
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -48,25 +90,32 @@
                 startAngle:0.0
                   endAngle:M_PI * 2.0
                  clockwise:YES];
+    location.x += 3;
+    
+    return path;
+}
+
+- (UIBezierPath *)makePointAtLocation:(CGPoint)location radius:(CGFloat)radius
+{
+    
+    location.x += 2;
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path addArcWithCenter:location
+                    radius:.3
+                startAngle:0.0
+                  endAngle:M_PI * 2.0
+                 clockwise:YES];
+    location.x += 3;
     
     return path;
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)recognizer {
-    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    CGPoint location = [recognizer locationInView:recognizer.view];
     
-    if(firstEyeLocation.x == 0 && firstEyeLocation.y == 0)
-    {
-        firstEyeLocation = location;
-        
-    }
-    else
-    {
-        
-        secondEyeLocation = location;
-        
-    }
-
+    
+    firstEyeLocation = location;
+    
     
 }
 
@@ -75,14 +124,22 @@
 
     
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    shapeLayer.path = [[self makeCircleAtLocation:firstEyeLocation radius:3.0] CGPath];
+    shapeLayer.path = [[self makeCircleAtLocation:firstEyeLocation radius:4.0] CGPath];
     shapeLayer.strokeColor = nil;
-    shapeLayer.fillColor = [[UIColor redColor] CGColor];
+    shapeLayer.fillColor = [[UIColor blackColor] CGColor];
     shapeLayer.lineWidth = 1.0;
+    
+    
+    CAShapeLayer *shapeLayer2 = [CAShapeLayer layer];
+    shapeLayer2.path = [[self makePointAtLocation:firstEyeLocation radius:5.0] CGPath];
+    shapeLayer2.strokeColor = nil;
+    shapeLayer2.fillColor = [[UIColor whiteColor] CGColor];
+    shapeLayer2.lineWidth = 1.0;
     
     // Add CAShapeLayer to our view
     
     [_imageView.layer addSublayer:shapeLayer];
+    [_imageView.layer addSublayer:shapeLayer2];
 
     
     
@@ -103,6 +160,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     _imageView.image = image;
     
     _didSelectImage = YES;
+
+    float minimumScale = [_scrollView frame].size.width / [_imageView frame].size.width;
+    _scrollView.maximumZoomScale = 100.0;
+    _scrollView.minimumZoomScale = 1.0;
+    _scrollView.contentSize = _imageView.image.size;
+    self.scrollView.contentOffset = CGPointMake(2000, 2000);
+    
+    
+    self.scrollView.delegate = self;
+    
 
 }
 
