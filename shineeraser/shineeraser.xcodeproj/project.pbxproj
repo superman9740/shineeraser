@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C8E37CF180E0B220064C912 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8E37CE180E0B220064C912 /* Picture.png */; };
+		3C8E37D1180E0B7A0064C912 /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8E37D0180E0B7A0064C912 /* eraser.png */; };
+		3C8E37D3180E0B9C0064C912 /* arrow-circular.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8E37D2180E0B9C0064C912 /* arrow-circular.png */; };
+		3C8E37D5180E0BD40064C912 /* crop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8E37D4180E0BD40064C912 /* crop.png */; };
+		3C8E37D7180E0C440064C912 /* cut.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8E37D6180E0C440064C912 /* cut.png */; };
 		3CA8733617D9546C0095A557 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA8733517D9546C0095A557 /* Foundation.framework */; };
 		3CA8733817D9546C0095A557 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA8733717D9546C0095A557 /* CoreGraphics.framework */; };
 		3CA8733A17D9546C0095A557 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA8733917D9546C0095A557 /* UIKit.framework */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C8E37CE180E0B220064C912 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
+		3C8E37D0180E0B7A0064C912 /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eraser.png; sourceTree = "<group>"; };
+		3C8E37D2180E0B9C0064C912 /* arrow-circular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-circular.png"; sourceTree = "<group>"; };
+		3C8E37D4180E0BD40064C912 /* crop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crop.png; sourceTree = "<group>"; };
+		3C8E37D6180E0C440064C912 /* cut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cut.png; sourceTree = "<group>"; };
 		3CA8733217D9546C0095A557 /* shineeraser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shineeraser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA8733517D9546C0095A557 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3CA8733717D9546C0095A557 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +91,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C8E37CB180E0A670064C912 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3C8E37D6180E0C440064C912 /* cut.png */,
+				3C8E37D4180E0BD40064C912 /* crop.png */,
+				3C8E37D2180E0B9C0064C912 /* arrow-circular.png */,
+				3C8E37D0180E0B7A0064C912 /* eraser.png */,
+				3C8E37CE180E0B220064C912 /* Picture.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		3CA8732917D9546C0095A557 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +151,7 @@
 		3CA8733C17D9546C0095A557 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C8E37CB180E0A670064C912 /* Images */,
 				3CA8733D17D9546C0095A557 /* shineeraser-Info.plist */,
 				3CA8733E17D9546C0095A557 /* InfoPlist.strings */,
 				3CA8734117D9546C0095A557 /* main.m */,
@@ -232,9 +255,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CA8734C17D9546C0095A557 /* Main_iPad.storyboard in Resources */,
+				3C8E37D1180E0B7A0064C912 /* eraser.png in Resources */,
+				3C8E37D3180E0B9C0064C912 /* arrow-circular.png in Resources */,
+				3C8E37D7180E0C440064C912 /* cut.png in Resources */,
 				3CA8735117D9546C0095A557 /* Images.xcassets in Resources */,
+				3C8E37CF180E0B220064C912 /* Picture.png in Resources */,
 				3CA8734917D9546C0095A557 /* Main_iPhone.storyboard in Resources */,
 				3CA8734017D9546C0095A557 /* InfoPlist.strings in Resources */,
+				3C8E37D5180E0BD40064C912 /* crop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +496,7 @@
 				3CA8736917D9546C0095A557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3CA8736A17D9546C0095A557 /* Build configuration list for PBXNativeTarget "shineeraserTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +505,7 @@
 				3CA8736C17D9546C0095A557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

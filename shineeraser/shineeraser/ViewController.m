@@ -49,6 +49,20 @@
 }
 
 
+-(IBAction)reset:(id)sender
+{
+    
+    NSArray* sublayers = [_imageView.layer.sublayers mutableCopy];
+    
+    for (CAShapeLayer* layer in sublayers )
+    {
+        [layer removeFromSuperlayer];
+        
+    }
+    
+}
+
+
 - (void)scrollViewDidZoom:(UIScrollView *)sv
 {
     UIView* zoomView = [sv.delegate viewForZoomingInScrollView:sv];
@@ -180,11 +194,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     
 
-    if(_didSelectImage)
-    {
-        return;
-        
-    }
+    
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeCamera])
     {
