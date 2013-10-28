@@ -171,10 +171,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [self dismissViewControllerAnimated:YES completion:nil];
     
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    
     _imageView.image = image;
     
-    _didSelectImage = YES;
+    AppController* appController = [AppController sharedInstance];
+    appController.didSelectImage = YES;
+    
+    [[[AppController sharedInstance] mainImage] setImage:_imageView.image];
 
+    
     float minimumScale = [_scrollView frame].size.width / [_imageView frame].size.width;
     _scrollView.maximumZoomScale = 100.0;
     _scrollView.minimumZoomScale = 1.0;
@@ -184,16 +190,20 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     self.scrollView.delegate = self;
     
-
+    
 }
 
 
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    
+    
+}
 
 -(IBAction)selectPhotos:(id)sender
 {
     
-
+    
     
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeCamera])
@@ -207,9 +217,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                            animated:YES completion:nil];
         
     }
-
+    
     
 }
+
 
 - (void)didReceiveMemoryWarning
 {

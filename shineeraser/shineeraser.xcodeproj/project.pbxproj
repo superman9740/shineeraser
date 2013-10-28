@@ -27,6 +27,13 @@
 		3CA8735A17D9546C0095A557 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA8733917D9546C0095A557 /* UIKit.framework */; };
 		3CA8736217D9546C0095A557 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CA8736017D9546C0095A557 /* InfoPlist.strings */; };
 		3CA8736417D9546C0095A557 /* shineeraserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA8736317D9546C0095A557 /* shineeraserTests.m */; };
+		DE1EAD07181EDC4000A5856E /* CropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1EAD06181EDC4000A5856E /* CropViewController.m */; };
+		DE1EAD0A181EE58F00A5856E /* off_switch_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1EAD08181EE58F00A5856E /* off_switch_trans.png */; };
+		DE1EAD0B181EE58F00A5856E /* on_switch_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1EAD09181EE58F00A5856E /* on_switch_trans.png */; };
+		DE1EAD13181EEACB00A5856E /* YKImageCropperOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1EAD0E181EEACB00A5856E /* YKImageCropperOverlayView.m */; };
+		DE1EAD14181EEACB00A5856E /* YKImageCropperView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1EAD10181EEACB00A5856E /* YKImageCropperView.m */; };
+		DE1EAD15181EEACB00A5856E /* YKImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1EAD12181EEACB00A5856E /* YKImageCropperViewController.m */; };
+		DE5C9924181ED72200B5EBAE /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C9923181ED72200B5EBAE /* AppController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,18 @@
 		3CA8735F17D9546C0095A557 /* shineeraserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "shineeraserTests-Info.plist"; sourceTree = "<group>"; };
 		3CA8736117D9546C0095A557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3CA8736317D9546C0095A557 /* shineeraserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shineeraserTests.m; sourceTree = "<group>"; };
+		DE1EAD05181EDC4000A5856E /* CropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropViewController.h; sourceTree = "<group>"; };
+		DE1EAD06181EDC4000A5856E /* CropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropViewController.m; sourceTree = "<group>"; };
+		DE1EAD08181EE58F00A5856E /* off_switch_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off_switch_trans.png; sourceTree = "<group>"; };
+		DE1EAD09181EE58F00A5856E /* on_switch_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on_switch_trans.png; sourceTree = "<group>"; };
+		DE1EAD0D181EEACB00A5856E /* YKImageCropperOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKImageCropperOverlayView.h; sourceTree = "<group>"; };
+		DE1EAD0E181EEACB00A5856E /* YKImageCropperOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKImageCropperOverlayView.m; sourceTree = "<group>"; };
+		DE1EAD0F181EEACB00A5856E /* YKImageCropperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKImageCropperView.h; sourceTree = "<group>"; };
+		DE1EAD10181EEACB00A5856E /* YKImageCropperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKImageCropperView.m; sourceTree = "<group>"; };
+		DE1EAD11181EEACB00A5856E /* YKImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKImageCropperViewController.h; sourceTree = "<group>"; };
+		DE1EAD12181EEACB00A5856E /* YKImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKImageCropperViewController.m; sourceTree = "<group>"; };
+		DE5C9922181ED72200B5EBAE /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		DE5C9923181ED72200B5EBAE /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +113,8 @@
 		3C8E37CB180E0A670064C912 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DE1EAD08181EE58F00A5856E /* off_switch_trans.png */,
+				DE1EAD09181EE58F00A5856E /* on_switch_trans.png */,
 				3C8E37D6180E0C440064C912 /* cut.png */,
 				3C8E37D4180E0BD40064C912 /* crop.png */,
 				3C8E37D2180E0B9C0064C912 /* arrow-circular.png */,
@@ -136,6 +157,9 @@
 		3CA8733B17D9546C0095A557 /* shineeraser */ = {
 			isa = PBXGroup;
 			children = (
+				DE1EAD0C181EEAB600A5856E /* YKImageCropper */,
+				DE5C9921181ED70F00B5EBAE /* AppController */,
+				DE5C991C181ED6C000B5EBAE /* Crop */,
 				3CA8734417D9546C0095A557 /* AppDelegate.h */,
 				3CA8734517D9546C0095A557 /* AppDelegate.m */,
 				3CA8734717D9546C0095A557 /* Main_iPhone.storyboard */,
@@ -176,6 +200,37 @@
 				3CA8736017D9546C0095A557 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE1EAD0C181EEAB600A5856E /* YKImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				DE1EAD0D181EEACB00A5856E /* YKImageCropperOverlayView.h */,
+				DE1EAD0E181EEACB00A5856E /* YKImageCropperOverlayView.m */,
+				DE1EAD0F181EEACB00A5856E /* YKImageCropperView.h */,
+				DE1EAD10181EEACB00A5856E /* YKImageCropperView.m */,
+				DE1EAD11181EEACB00A5856E /* YKImageCropperViewController.h */,
+				DE1EAD12181EEACB00A5856E /* YKImageCropperViewController.m */,
+			);
+			name = YKImageCropper;
+			sourceTree = "<group>";
+		};
+		DE5C991C181ED6C000B5EBAE /* Crop */ = {
+			isa = PBXGroup;
+			children = (
+				DE1EAD05181EDC4000A5856E /* CropViewController.h */,
+				DE1EAD06181EDC4000A5856E /* CropViewController.m */,
+			);
+			name = Crop;
+			sourceTree = "<group>";
+		};
+		DE5C9921181ED70F00B5EBAE /* AppController */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C9922181ED72200B5EBAE /* AppController.h */,
+				DE5C9923181ED72200B5EBAE /* AppController.m */,
+			);
+			name = AppController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CA8734C17D9546C0095A557 /* Main_iPad.storyboard in Resources */,
+				DE1EAD0B181EE58F00A5856E /* on_switch_trans.png in Resources */,
 				3C8E37D1180E0B7A0064C912 /* eraser.png in Resources */,
 				3C8E37D3180E0B9C0064C912 /* arrow-circular.png in Resources */,
 				3C8E37D7180E0C440064C912 /* cut.png in Resources */,
@@ -262,6 +318,7 @@
 				3C8E37CF180E0B220064C912 /* Picture.png in Resources */,
 				3CA8734917D9546C0095A557 /* Main_iPhone.storyboard in Resources */,
 				3CA8734017D9546C0095A557 /* InfoPlist.strings in Resources */,
+				DE1EAD0A181EE58F00A5856E /* off_switch_trans.png in Resources */,
 				3C8E37D5180E0BD40064C912 /* crop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,8 +339,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CA8734F17D9546C0095A557 /* ViewController.m in Sources */,
+				DE1EAD14181EEACB00A5856E /* YKImageCropperView.m in Sources */,
+				DE1EAD15181EEACB00A5856E /* YKImageCropperViewController.m in Sources */,
 				3CA8734617D9546C0095A557 /* AppDelegate.m in Sources */,
+				DE1EAD07181EDC4000A5856E /* CropViewController.m in Sources */,
+				DE5C9924181ED72200B5EBAE /* AppController.m in Sources */,
 				3CA8734217D9546C0095A557 /* main.m in Sources */,
+				DE1EAD13181EEACB00A5856E /* YKImageCropperOverlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

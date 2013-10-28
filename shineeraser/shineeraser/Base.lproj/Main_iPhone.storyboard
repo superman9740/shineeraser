@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hiF-gJ-7Qm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hiF-gJ-7Qm">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--View Controller - Erase-->
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AdZ-N1-kFn">
-                                <rect key="frame" x="0.0" y="20" width="320" height="437"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7K-9z-Ug0">
@@ -55,8 +55,15 @@
                                 <state key="normal" title="Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15k-0N-CA4">
+                                <rect key="frame" x="120" y="489" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Selet Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="Yr5-Bv-dlB" kind="modal" modalTransitionStyle="coverVertical" id="h7f-wo-a1a"/>
+                                    <action selector="selectPhotos:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xzk-ij-wAC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,26 +82,26 @@
         <scene sceneID="uwK-rA-9kU">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="hiF-gJ-7Qm" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="qGq-yV-uWm">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Ms8-2r-rKm" kind="relationship" relationship="viewControllers" id="hCh-MO-HCk"/>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="6ze-x8-ZDW"/>
-                        <segue destination="7SR-m0-zWj" kind="relationship" relationship="viewControllers" id="HAw-pv-U92"/>
+                        <segue destination="Ms8-2r-rKm" kind="relationship" relationship="viewControllers" id="G7X-AO-wNF"/>
+                        <segue destination="Yr5-Bv-dlB" kind="relationship" relationship="viewControllers" id="LS8-U1-luL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMH-gF-Wta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="215" y="983"/>
         </scene>
-        <!--View Controller - Crop-->
+        <!--Crop View Controller - Crop-->
         <scene sceneID="E5x-Ri-UKd">
             <objects>
-                <viewController id="Ms8-2r-rKm" sceneMemberID="viewController">
+                <viewController id="Ms8-2r-rKm" customClass="CropViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FhR-qv-S70"/>
                         <viewControllerLayoutGuide type="bottom" id="GCI-v3-z9C"/>
@@ -102,34 +109,45 @@
                     <view key="view" contentMode="scaleToFill" id="fs6-dk-dkg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRL-ug-4rz">
+                                <rect key="frame" x="0.0" y="20" width="320" height="472"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8WZ-oC-BCq">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="JjH-4D-38w"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dt1-Hl-4Pv">
+                                <rect key="frame" x="143" y="490" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Crop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="Ms8-2r-rKm" eventType="touchUpInside" id="ImI-Ai-0hO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Crop" image="crop.png" id="U7c-Z7-xkr"/>
+                    <tabBarItem key="tabBarItem" title="Crop" image="crop.png" id="Xso-jx-XwU"/>
+                    <navigationItem key="navigationItem" id="L4H-th-RcZ"/>
+                    <connections>
+                        <outlet property="imageView" destination="8WZ-oC-BCq" id="Otg-yf-36J"/>
+                        <outlet property="scrollView" destination="GRL-ug-4rz" id="a2F-2t-8ma"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YK1-Hb-rs9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="1135"/>
+            <point key="canvasLocation" x="834" y="1136"/>
         </scene>
-        <!--View Controller - Select Photo-->
-        <scene sceneID="X5D-Jf-iYH">
-            <objects>
-                <viewController id="7SR-m0-zWj" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3O4-Iw-IDS"/>
-                        <viewControllerLayoutGuide type="bottom" id="ku1-hi-Sjg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Bwy-0f-RPQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Select Photo" image="Picture.png" id="PZJ-MZ-w3v"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kFB-pB-eqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1203" y="1131"/>
-        </scene>
-        <!--View Controller-->
+        <!--View Controller - Settings-->
         <scene sceneID="Sv0-GV-ypM">
             <objects>
                 <viewController id="Yr5-Bv-dlB" sceneMemberID="viewController">
@@ -141,27 +159,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bNO-BT-LXp">
-                                <rect key="frame" x="20" y="20" width="280" height="29"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Iris Size:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r37-eb-emV">
+                                <rect key="frame" x="20" y="158" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Colors"/>
-                                    <segment title="Sizes"/>
-                                </segments>
-                            </segmentedControl>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=".05" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R3B-2F-mW1">
+                                <rect key="frame" x="203" y="154" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overwrite original:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6S-V2-uqV">
+                                <rect key="frame" x="20" y="228" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" onImage="on_switch_trans.png" offImage="off_switch_trans.png" translatesAutoresizingMaskIntoConstraints="NO" id="inj-KV-pC5">
+                                <rect key="frame" x="227" y="223" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="M83-2i-pyP">
+                                <rect key="frame" x="106" y="155" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </stepper>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="B68-CF-WaR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbN-1f-OpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1203" y="343"/>
+            <point key="canvasLocation" x="1166" y="340"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Picture.png" width="30" height="30"/>
         <image name="crop.png" width="32" height="32"/>
         <image name="eraser.png" width="32" height="32"/>
+        <image name="off_switch_trans.png" width="164" height="68"/>
+        <image name="on_switch_trans.png" width="163" height="64"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
