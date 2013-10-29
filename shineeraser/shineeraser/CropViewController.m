@@ -33,12 +33,13 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    _imageView.image = [[[AppController sharedInstance] mainImage ] image];
+//    _imageView.image = [[[AppController sharedInstance] mainImage ] image];
     BOOL didSelectImage = [[AppController sharedInstance] didSelectImage];
     if(didSelectImage)
     {
-   
-        _imageCropperViewController = [[YKImageCropperViewController alloc] initWithImage:_imageView.image];
+        UIImage* image = [[[AppController sharedInstance] mainImage] image];
+        
+        _imageCropperViewController = [[YKImageCropperViewController alloc] initWithImage:image];
         _imageCropperViewController.cancelHandler = ^() {
             NSLog(@"* Cancel");
         };
@@ -46,17 +47,17 @@
         
         _imageCropperViewController.doneHandler = ^(UIImage *editedImage) {
             NSLog(@"* Done");
-            cropSelf.imageView.image = editedImage;
             [[[AppController sharedInstance] mainImage ] setImage:editedImage];
             
-            [cropSelf.imageCropperViewController.view removeFromSuperview];
+            [cropSelf.imageCropperViewController removeFromParentViewController];
             
+            [cropSelf viewWillAppear:YES];
             
             
             
         };
         
-        [_imageView addSubview:_imageCropperViewController.view];
+        [self.cropView addSubview:_imageCropperViewController.view];
         
         
         

@@ -40,7 +40,13 @@
        //note set the imageView's frame in ViewwillAppear or ViewDidAppear.
     //_imageView.frame = CGRectMake(0,0, 320, 480);
 
-
+    BOOL didSelectPicture = [[AppController sharedInstance] didSelectImage];
+    if(didSelectPicture)
+    {
+        self.imageView.image = [[[AppController sharedInstance] mainImage] image];
+        
+        
+    }
     
 }
 - (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView

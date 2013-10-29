@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong) YKImageCropperViewController* imageCropperViewController;
 
-@property (nonatomic, strong) IBOutlet UIImageView* imageView;
+@property (nonatomic, strong) IBOutlet UIView* cropView;
 @property (nonatomic, strong) IBOutlet UIScrollView* scrollView;
 
 
