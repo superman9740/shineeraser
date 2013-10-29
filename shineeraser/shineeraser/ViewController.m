@@ -146,20 +146,27 @@
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.path = [[self makeCircleAtLocation:firstEyeLocation radius:4.0] CGPath];
     shapeLayer.strokeColor = nil;
-    shapeLayer.fillColor = [[UIColor blackColor] CGColor];
+    shapeLayer.fillColor = [[UIColor brownColor] CGColor];
     shapeLayer.lineWidth = 1.0;
     
-    
-    CAShapeLayer *shapeLayer2 = [CAShapeLayer layer];
-    shapeLayer2.path = [[self makePointAtLocation:firstEyeLocation radius:5.0] CGPath];
+    CAShapeLayer* shapeLayer2 = [CAShapeLayer layer];
+    shapeLayer2.path = [[self makeCircleAtLocation:firstEyeLocation radius:2.0] CGPath];
     shapeLayer2.strokeColor = nil;
-    shapeLayer2.fillColor = [[UIColor whiteColor] CGColor];
+    shapeLayer2.fillColor = [[UIColor blackColor] CGColor];
     shapeLayer2.lineWidth = 1.0;
     
+    
+    CAShapeLayer *shapeLayer3 = [CAShapeLayer layer];
+    shapeLayer3.path = [[self makePointAtLocation:firstEyeLocation radius:5.0] CGPath];
+    shapeLayer3.strokeColor = nil;
+    shapeLayer3.fillColor = [[UIColor whiteColor] CGColor];
+    shapeLayer3.lineWidth = 1.0;
+   
     // Add CAShapeLayer to our view
     
     [_imageView.layer addSublayer:shapeLayer];
     [_imageView.layer addSublayer:shapeLayer2];
+    [_imageView.layer addSublayer:shapeLayer3];
 
     
     
