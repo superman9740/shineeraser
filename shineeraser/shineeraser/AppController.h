@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) UIImageView* mainImage;
 @property (assign) BOOL  didSelectImage;
+@property (assign) double  circleSize;
 
 
 @end

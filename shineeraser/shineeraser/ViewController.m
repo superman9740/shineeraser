@@ -18,16 +18,16 @@
 {
     [super viewDidLoad];
 
+    UITapGestureRecognizer *singleFingerTap =    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                         action:@selector(handleTap:)];
     
+    [_imageView addGestureRecognizer:singleFingerTap];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
 
-    UITapGestureRecognizer *singleFingerTap =    [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(handleTap:)];
-    
-    [_imageView addGestureRecognizer:singleFingerTap];
     
   //  UITapGestureRecognizer *twoFingerTap =    [[UITapGestureRecognizer alloc] initWithTarget:self
   //                                                                                       action:@selector(handlePinchToZoom:)];
@@ -58,13 +58,14 @@
 -(IBAction)reset:(id)sender
 {
     
-    NSArray* sublayers = [_imageView.layer.sublayers mutableCopy];
+    NSArray* sublayers = [_imageView.layer.sublayers copy];
     
     for (CAShapeLayer* layer in sublayers )
     {
         [layer removeFromSuperlayer];
         
     }
+   
     
 }
 
@@ -103,6 +104,7 @@
 - (UIBezierPath *)makeCircleAtLocation:(CGPoint)location radius:(CGFloat)radius
 {
     
+    //location.x -= 6;
     
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path addArcWithCenter:location
@@ -110,7 +112,6 @@
                 startAngle:0.0
                   endAngle:M_PI * 2.0
                  clockwise:YES];
-    location.x += 3;
     
     return path;
 }
@@ -118,14 +119,13 @@
 - (UIBezierPath *)makePointAtLocation:(CGPoint)location radius:(CGFloat)radius
 {
     
-    location.x += 2;
+    //location.x -= 6;
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path addArcWithCenter:location
-                    radius:.3
+                    radius:radius
                 startAngle:0.0
                   endAngle:M_PI * 2.0
                  clockwise:YES];
-    location.x += 3;
     
     return path;
 }
@@ -141,23 +141,25 @@
 
 -(IBAction)removeShine:(id)sender
 {
-
+    double circleSize = [[AppController sharedInstance] circleSize];
+    
     
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    shapeLayer.path = [[self makeCircleAtLocation:firstEyeLocation radius:4.0] CGPath];
+    
+    shapeLayer.path = [[self makeCircleAtLocation:firstEyeLocation radius:circleSize] CGPath];
     shapeLayer.strokeColor = nil;
-    shapeLayer.fillColor = [[UIColor brownColor] CGColor];
+    shapeLayer.fillColor = [[UIColor colorWithRed:92/255.0 green:64/255.0 blue:51/255.0 alpha:1] CGColor];
     shapeLayer.lineWidth = 1.0;
     
     CAShapeLayer* shapeLayer2 = [CAShapeLayer layer];
-    shapeLayer2.path = [[self makeCircleAtLocation:firstEyeLocation radius:2.0] CGPath];
+    shapeLayer2.path = [[self makeCircleAtLocation:firstEyeLocation radius:circleSize - .3] CGPath];
     shapeLayer2.strokeColor = nil;
     shapeLayer2.fillColor = [[UIColor blackColor] CGColor];
     shapeLayer2.lineWidth = 1.0;
     
     
     CAShapeLayer *shapeLayer3 = [CAShapeLayer layer];
-    shapeLayer3.path = [[self makePointAtLocation:firstEyeLocation radius:5.0] CGPath];
+    shapeLayer3.path = [[self makePointAtLocation:firstEyeLocation radius:.4] CGPath];
     shapeLayer3.strokeColor = nil;
     shapeLayer3.fillColor = [[UIColor whiteColor] CGColor];
     shapeLayer3.lineWidth = 1.0;
@@ -194,14 +196,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [[[AppController sharedInstance] mainImage] setImage:_imageView.image];
 
     
-    float minimumScale = [_scrollView frame].size.width / [_imageView frame].size.width;
-    _scrollView.maximumZoomScale = 100.0;
-    _scrollView.minimumZoomScale = 1.0;
-    _scrollView.contentSize = _imageView.image.size;
-    self.scrollView.contentOffset = CGPointMake(2000, 2000);
+  //  float minimumScale = [_scrollView frame].size.width / [_imageView frame].size.width;
+  //  _scrollView.maximumZoomScale = 100.0;
+  //  _scrollView.minimumZoomScale = 1.0;
+  //  _scrollView.contentSize = _imageView.image.size;
+  //  self.llView.contentOffset = CGPointMake(2000, 2000);
     
     
-    self.scrollView.delegate = self;
+   // self.scrollView.delegate = self;
     
     
 }

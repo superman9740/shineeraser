@@ -31,6 +31,7 @@ static  AppController* sharedInstance = nil;
     if (self) {
     
         _mainImage = [[UIImageView alloc] init];
+        _circleSize = 4.0;
         
         
     }

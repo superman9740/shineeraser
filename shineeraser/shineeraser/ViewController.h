@@ -14,6 +14,7 @@
 
     CGPoint firstEyeLocation;
     CGPoint secondEyeLocation;
+   
     
     
     
@@ -22,7 +23,7 @@
 @property (assign) BOOL didSelectImage;
 
 @property (nonatomic, strong) IBOutlet UIImageView* imageView;
-@property (nonatomic, strong) IBOutlet UIScrollView* scrollView;
+
 
 
 -(IBAction)selectPhotos:(id)sender;
@@ -32,6 +33,8 @@
 -(IBAction)handlePinchToZoom:(id)sender;
 
 -(IBAction)removeShine:(id)sender;
+
+
 
 -(IBAction)reset:(id)sender;
 
