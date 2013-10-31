@@ -38,6 +38,7 @@
 		DE9AE63B1822D19100F57E89 /* camera_photo_1024_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9AE63A1822D19100F57E89 /* camera_photo_1024_1024.png */; };
 		DE9AE63F1822D65400F57E89 /* camera_launch.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9AE63E1822D65400F57E89 /* camera_launch.png */; };
 		DE9AE6411822D7FA00F57E89 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9AE6401822D7FA00F57E89 /* Default-568h@2x.png */; };
+		DE9AE64E1822EB5100F57E89 /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9AE64D1822EB5100F57E89 /* libFlurry_4.3.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		DE9AE63A1822D19100F57E89 /* camera_photo_1024_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_photo_1024_1024.png; sourceTree = "<group>"; };
 		DE9AE63E1822D65400F57E89 /* camera_launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_launch.png; sourceTree = "<group>"; };
 		DE9AE6401822D7FA00F57E89 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DE9AE64C1822EB5100F57E89 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		DE9AE64D1822EB5100F57E89 /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.0.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CA8733817D9546C0095A557 /* CoreGraphics.framework in Frameworks */,
+				DE9AE64E1822EB5100F57E89 /* libFlurry_4.3.0.a in Frameworks */,
 				3CA8733A17D9546C0095A557 /* UIKit.framework in Frameworks */,
 				3CA8733617D9546C0095A557 /* Foundation.framework in Frameworks */,
 			);
@@ -140,6 +144,7 @@
 		3CA8732917D9546C0095A557 = {
 			isa = PBXGroup;
 			children = (
+				DE9AE64B1822EB5100F57E89 /* Flurry */,
 				DE9AE6401822D7FA00F57E89 /* Default-568h@2x.png */,
 				3CA8733B17D9546C0095A557 /* shineeraser */,
 				3CA8735D17D9546C0095A557 /* shineeraserTests */,
@@ -255,6 +260,15 @@
 				DE9AE62D18218B0800F57E89 /* SettingsViewController.m */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		DE9AE64B1822EB5100F57E89 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				DE9AE64C1822EB5100F57E89 /* Flurry.h */,
+				DE9AE64D1822EB5100F57E89 /* libFlurry_4.3.0.a */,
+			);
+			path = Flurry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,6 +521,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shineeraser/shineeraser-Prefix.pch";
 				INFOPLIST_FILE = "shineeraser/shineeraser-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/USMEM-W-003157/Documents/Code/Shineeraser/shineeraser/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -519,6 +537,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shineeraser/shineeraser-Prefix.pch";
 				INFOPLIST_FILE = "shineeraser/shineeraser-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/USMEM-W-003157/Documents/Code/Shineeraser/shineeraser/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

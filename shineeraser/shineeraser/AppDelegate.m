@@ -12,7 +12,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    
+    [Flurry setCrashReportingEnabled:YES];
+    [Flurry startSession:@"D5Q42JDBFZYVFGWKPP44"];
+    
     return YES;
 }
 							

@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Flurry.h"
+@import SystemConfiguration;
+@import AdSupport;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
