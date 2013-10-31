@@ -39,7 +39,8 @@
    
        //note set the imageView's frame in ViewwillAppear or ViewDidAppear.
     //_imageView.frame = CGRectMake(0,0, 320, 480);
-
+    [self reset:self];
+    
     BOOL didSelectPicture = [[AppController sharedInstance] didSelectImage];
     if(didSelectPicture)
     {
@@ -211,6 +212,22 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 -(void)viewWillDisappear:(BOOL)animated
 {
+    
+    
+}
+
+-(IBAction)savePhoto:(id)sender
+{
+ 
+    UIGraphicsBeginImageContext(_imageView.frame.size);
+    [self.imageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage* tempImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+
+     UIImageWriteToSavedPhotosAlbum(tempImage, nil, nil, nil);
+    UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"Save photo" message:@"Photo was saved to your camera roll." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [view show];
     
     
 }

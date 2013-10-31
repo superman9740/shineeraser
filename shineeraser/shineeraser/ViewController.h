@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppController.h"
 
-@interface ViewController : UIViewController<UIScrollViewDelegate>
+@interface ViewController : UIViewController<UIImagePickerControllerDelegate>
 {
 
     CGPoint firstEyeLocation;
@@ -34,6 +34,7 @@
 
 -(IBAction)removeShine:(id)sender;
 
+-(IBAction)savePhoto:(id)sender;
 
 
 -(IBAction)reset:(id)sender;

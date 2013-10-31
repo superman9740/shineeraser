@@ -34,6 +34,10 @@
 		DE5C9924181ED72200B5EBAE /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C9923181ED72200B5EBAE /* AppController.m */; };
 		DE9AE62A18217E3200F57E89 /* engineering-32.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9AE62918217E3200F57E89 /* engineering-32.png */; };
 		DE9AE62E18218B0800F57E89 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9AE62D18218B0800F57E89 /* SettingsViewController.m */; };
+		DE9AE6391822CD2C00F57E89 /* camera_photo_120_120.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9AE6381822CD2C00F57E89 /* camera_photo_120_120.png */; };
+		DE9AE63B1822D19100F57E89 /* camera_photo_1024_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9AE63A1822D19100F57E89 /* camera_photo_1024_1024.png */; };
+		DE9AE63F1822D65400F57E89 /* camera_launch.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9AE63E1822D65400F57E89 /* camera_launch.png */; };
+		DE9AE6411822D7FA00F57E89 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9AE6401822D7FA00F57E89 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,11 @@
 		DE9AE62918217E3200F57E89 /* engineering-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "engineering-32.png"; sourceTree = "<group>"; };
 		DE9AE62C18218B0800F57E89 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		DE9AE62D18218B0800F57E89 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		DE9AE6371822CCB700F57E89 /* camera_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_photo.png; path = ../camera_photo.png; sourceTree = "<group>"; };
+		DE9AE6381822CD2C00F57E89 /* camera_photo_120_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_photo_120_120.png; sourceTree = "<group>"; };
+		DE9AE63A1822D19100F57E89 /* camera_photo_1024_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_photo_1024_1024.png; sourceTree = "<group>"; };
+		DE9AE63E1822D65400F57E89 /* camera_launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_launch.png; sourceTree = "<group>"; };
+		DE9AE6401822D7FA00F57E89 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +123,10 @@
 		3C8E37CB180E0A670064C912 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DE9AE63E1822D65400F57E89 /* camera_launch.png */,
+				DE9AE63A1822D19100F57E89 /* camera_photo_1024_1024.png */,
+				DE9AE6381822CD2C00F57E89 /* camera_photo_120_120.png */,
+				DE9AE6371822CCB700F57E89 /* camera_photo.png */,
 				DE9AE62918217E3200F57E89 /* engineering-32.png */,
 				3C8E37D6180E0C440064C912 /* cut.png */,
 				3C8E37D4180E0BD40064C912 /* crop.png */,
@@ -127,6 +140,7 @@
 		3CA8732917D9546C0095A557 = {
 			isa = PBXGroup;
 			children = (
+				DE9AE6401822D7FA00F57E89 /* Default-568h@2x.png */,
 				3CA8733B17D9546C0095A557 /* shineeraser */,
 				3CA8735D17D9546C0095A557 /* shineeraserTests */,
 				3CA8733417D9546C0095A557 /* Frameworks */,
@@ -322,9 +336,13 @@
 				3CA8734C17D9546C0095A557 /* Main_iPad.storyboard in Resources */,
 				3C8E37D1180E0B7A0064C912 /* eraser.png in Resources */,
 				3C8E37D3180E0B9C0064C912 /* arrow-circular.png in Resources */,
+				DE9AE63F1822D65400F57E89 /* camera_launch.png in Resources */,
+				DE9AE63B1822D19100F57E89 /* camera_photo_1024_1024.png in Resources */,
+				DE9AE6411822D7FA00F57E89 /* Default-568h@2x.png in Resources */,
 				3C8E37D7180E0C440064C912 /* cut.png in Resources */,
 				DE9AE62A18217E3200F57E89 /* engineering-32.png in Resources */,
 				3CA8735117D9546C0095A557 /* Images.xcassets in Resources */,
+				DE9AE6391822CD2C00F57E89 /* camera_photo_120_120.png in Resources */,
 				3C8E37CF180E0B220064C912 /* Picture.png in Resources */,
 				3CA8734917D9546C0095A557 /* Main_iPhone.storyboard in Resources */,
 				3CA8734017D9546C0095A557 /* InfoPlist.strings in Resources */,
@@ -486,12 +504,11 @@
 		3CA8736817D9546C0095A557 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shineeraser/shineeraser-Prefix.pch";
 				INFOPLIST_FILE = "shineeraser/shineeraser-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -499,12 +516,11 @@
 		3CA8736917D9546C0095A557 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shineeraser/shineeraser-Prefix.pch";
 				INFOPLIST_FILE = "shineeraser/shineeraser-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
