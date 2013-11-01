@@ -22,6 +22,25 @@
                                                                                          action:@selector(handleTap:)];
     
     [_imageView addGestureRecognizer:singleFingerTap];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* introWasShown = [defaults objectForKey:@"intro"];
+    
+   if(introWasShown == nil)
+   {
+    
+       UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Welcome to Shineeraser" message:@"To remove shine from a photo, tap on an area, and then tap Remove Shine." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+       [alertView show];
+       NSString* introWasShown = @"YES";
+       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+       [defaults setObject:introWasShown forKey:@"intro"];
+       [defaults synchronize];
+       
+   }
+
+    
+    
+    
 
 }
 
