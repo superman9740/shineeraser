@@ -521,8 +521,8 @@
 		3CA8736817D9546C0095A557 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Dickson (C3829LN65T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Dickson (C3829LN65T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shineeraser/shineeraser-Prefix.pch";
 				INFOPLIST_FILE = "shineeraser/shineeraser-Info.plist";
@@ -540,8 +540,8 @@
 		3CA8736917D9546C0095A557 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Dickson (C3829LN65T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Dickson (C3829LN65T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shineeraser/shineeraser-Prefix.pch";
 				INFOPLIST_FILE = "shineeraser/shineeraser-Info.plist";
